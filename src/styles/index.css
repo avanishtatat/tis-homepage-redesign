@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* Tailwind ko batao ki dark mode `.dark` class se chalega (OS setting se nahi) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Raw tokens: light mode (default) ---------- */
+:root {
+  --surface: #ffffff;
+  --surface-alt: #f8f5f0;
+  --ink: #262626;
+  --ink-muted: #5c5c5c;
+  --line: #e5e0d8;
+
+  --brand: #b90124;       /* backgrounds, buttons */
+  --brand-text: #b90124;  /* red text on light surface: ~6.8:1, AA pass */
+  --on-brand: #ffffff;    /* text on red backgrounds */
+
+  --accent: #c09d59;      /* gold: sirf decorative (underline, dividers, icons) */
+  --accent-text: #7a5f1f; /* gold-ish text, darker shade for readability */
+}
+
+/* ---------- Dark mode: sirf values badalti hain ---------- */
+.dark {
+  --surface: #121212;
+  --surface-alt: #1c1c1c;
+  --ink: #f2f2f2;
+  --ink-muted: #a8a8a8;
+  --line: #2e2e2e;
+
+  --brand-text: #ff5c70;  /* lighter red: dark pe original red ~2.8:1 fail hota */
+  --accent-text: #c09d59; /* gold dark pe ~7:1, safe */
+}
+
+/* ---------- Tailwind ko tokens expose karo ---------- */
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-text: var(--brand-text);
+  --color-on-brand: var(--on-brand);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+}
+
+@theme {
+  --font-body: "Barlow", system-ui, sans-serif;
+  --font-display: "Barlow Semi Condensed", system-ui, sans-serif;
+  --font-accent: "Playfair Display", Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface font-body text-ink antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
