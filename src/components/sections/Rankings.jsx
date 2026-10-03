@@ -1,5 +1,5 @@
-import { rankings } from '../../data/rankings'
-import { Stagger, StaggerItem } from '../animation/Stagger'
+import { rankings } from "../../data/rankings";
+import { Stagger, StaggerItem } from "../animation/Stagger";
 
 export default function Rankings() {
   return (
@@ -16,15 +16,16 @@ export default function Rankings() {
                 <span className="text-6xl">{item.rank}</span>
               </p>
               <p className="mt-2 font-display text-lg font-bold uppercase tracking-wide">
-                {item.scope}
+                In {item.scope}
               </p>
-              {item.source && (
-                <p className="mt-1 text-sm text-ink-muted">{item.source}</p>
-              )}
+              <p className="mt-2 text-sm text-ink-muted">{item.category}</p>
+              <p className="mt-1 text-sm font-medium text-ink-muted">
+                by {item.source}
+              </p>
             </StaggerItem>
           ))}
         </Stagger>
       </div>
     </section>
-  )
+  );
 }
