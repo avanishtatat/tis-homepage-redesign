@@ -5,6 +5,7 @@ const variants = {
   primary: 'bg-brand text-on-brand hover:bg-brand/85',
   outline: 'border-2 border-current text-ink hover:bg-ink hover:text-surface',
   light: 'bg-white text-brand hover:bg-white/90',
+  outlineLight: 'border-2 border-white text-white hover:bg-white hover:text-brand',
 }
 
 const sizes = {

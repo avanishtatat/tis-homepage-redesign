@@ -1,12 +1,15 @@
-import { hero } from '../../data/hero'
-import { contact } from '../../data/contact'
-import Button from '../ui/Button'
-import Reveal from '../animation/Reveal'
-import campusTopView from '../../assets/campus-top-view.webp'
+import { hero } from "../../data/hero";
+import { contact } from "../../data/contact";
+import Button from "../ui/Button";
+import Reveal from "../animation/Reveal";
+import campusTopView from "../../assets/campus-top-view.webp";
 
 export default function Hero() {
   return (
-    <section aria-labelledby="hero-heading" className="overflow-hidden bg-brand text-on-brand">
+    <section
+      aria-labelledby="hero-heading"
+      className="overflow-hidden bg-brand text-on-brand"
+    >
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-24">
         <div>
           <Reveal>
@@ -20,7 +23,7 @@ export default function Hero() {
               id="hero-heading"
               className="mt-4 font-display text-5xl font-extrabold uppercase leading-[0.95] sm:text-6xl lg:text-7xl"
             >
-              {hero.headingStart}{' '}
+              {hero.headingStart}{" "}
               <span className="relative inline-block font-accent normal-case italic">
                 {hero.headingAccent}
                 <svg
@@ -43,20 +46,26 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="mt-8 max-w-xl text-lg font-light sm:text-xl">{hero.description}</p>
+            <p className="mt-8 max-w-xl text-lg font-light sm:text-xl">
+              {hero.description}
+            </p>
           </Reveal>
 
           <Reveal delay={0.3}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href={contact.applyUrl} external variant="light" size="lg">
+              <Button
+                href={contact.applyUrl}
+                external
+                variant="light"
+                size="lg"
+              >
                 Apply Now
               </Button>
               <Button
                 href={contact.virtualTourUrl}
                 external
-                variant="outline"
+                variant="outlineLight"
                 size="lg"
-                className="text-white hover:bg-white hover:text-brand"
               >
                 Take a Virtual Tour
               </Button>
@@ -96,5 +105,5 @@ export default function Hero() {
         </Reveal>
       </div>
     </section>
-  )
+  );
 }
