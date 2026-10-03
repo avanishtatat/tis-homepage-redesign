@@ -1,7 +1,8 @@
-import { MotionConfig } from 'framer-motion'
-import TopBar from './components/layout/TopBar'
-import Navbar from './components/layout/Navbar'
-import Footer from './components/layout/Footer'
+import { MotionConfig } from "framer-motion";
+import TopBar from "./components/layout/TopBar";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+import Hero from "./components/sections/Hero";
 
 function App() {
   return (
@@ -14,14 +15,12 @@ function App() {
       </a>
       <TopBar />
       <Navbar />
-      <main id="main" className="min-h-[120vh] p-8">
-        <h1 className="font-display text-5xl font-extrabold uppercase text-ink">
-          Made for the <span className="font-accent italic text-brand-text">future</span>
-        </h1>
+      <main id="main">
+        <Hero />
       </main>
       <Footer />
     </MotionConfig>
-  )
+  );
 }
 
-export default App
+export default App;
