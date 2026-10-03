@@ -13,6 +13,21 @@
     <title>
       Tulas International School (TIS) | Boarding School in Dehradun
     </title>
+    <script>
+      // Runs before first paint to avoid a flash of the wrong theme.
+      // Storage key must match STORAGE_KEY in src/hooks/useTheme.js
+      (function () {
+        try {
+          var stored = localStorage.getItem("tis-theme");
+          var prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          if (stored === "dark" || (!stored && prefersDark)) {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

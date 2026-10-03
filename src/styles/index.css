@@ -5,29 +5,31 @@
 
 /* ---------- Raw tokens: light mode (default) ---------- */
 :root {
+  --color-scheme: light;
   --surface: #ffffff;
   --surface-alt: #f8f5f0;
   --ink: #262626;
   --ink-muted: #5c5c5c;
   --line: #e5e0d8;
 
-  --brand: #b90124;       /* backgrounds, buttons */
-  --brand-text: #b90124;  /* red text on light surface: ~6.8:1, AA pass */
-  --on-brand: #ffffff;    /* text on red backgrounds */
+  --brand: #b90124; /* backgrounds, buttons */
+  --brand-text: #b90124; /* red text on light surface: ~6.8:1, AA pass */
+  --on-brand: #ffffff; /* text on red backgrounds */
 
-  --accent: #c09d59;      /* gold: sirf decorative (underline, dividers, icons) */
+  --accent: #c09d59; /* gold: sirf decorative (underline, dividers, icons) */
   --accent-text: #7a5f1f; /* gold-ish text, darker shade for readability */
 }
 
 /* ---------- Dark mode: sirf values badalti hain ---------- */
 .dark {
+  --color-scheme: dark;
   --surface: #121212;
   --surface-alt: #1c1c1c;
   --ink: #f2f2f2;
   --ink-muted: #a8a8a8;
   --line: #2e2e2e;
 
-  --brand-text: #ff5c70;  /* lighter red: dark pe original red ~2.8:1 fail hota */
+  --brand-text: #ff5c70; /* lighter red: dark pe original red ~2.8:1 fail hota */
   --accent-text: #c09d59; /* gold dark pe ~7:1, safe */
 }
 
@@ -70,5 +72,25 @@
     html {
       scroll-behavior: auto;
     }
+  }
+}
+
+/* Smooth colour change, active only briefly while the theme is toggled */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-transition,
+  .theme-transition *,
+  .theme-transition *::before,
+  .theme-transition *::after {
+    transition: none !important;
   }
 }

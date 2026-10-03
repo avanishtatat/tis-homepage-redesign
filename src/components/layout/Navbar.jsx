@@ -1,21 +1,25 @@
-import { useCallback, useState } from 'react'
-import { Menu, X } from 'lucide-react'
-import { navItems } from '../../data/navItems'
-import { contact } from '../../data/contact'
-import { useScrolled } from '../../hooks/useScrolled'
-import Button from '../ui/Button'
-import MobileNav from './MobileNav'
-import logo from '../../assets/logo.png'
+import { useCallback, useState } from "react";
+import { Menu, X } from "lucide-react";
+import { navItems } from "../../data/navItems";
+import { contact } from "../../data/contact";
+import { useScrolled } from "../../hooks/useScrolled";
+import Button from "../ui/Button";
+import MobileNav from "./MobileNav";
+import logo from "../../assets/logo.png";
+import { useTheme } from "../../hooks/useTheme";
+import ThemeToggle from "../animation/ThemeToggle";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false)
-  const scrolled = useScrolled()
-  const closeMenu = useCallback(() => setOpen(false), [])
+  const [open, setOpen] = useState(false);
+  const scrolled = useScrolled();
+  const { theme, toggleTheme } = useTheme();
+
+  const closeMenu = useCallback(() => setOpen(false), []);
 
   return (
     <header
       className={`sticky top-0 z-40 bg-surface/95 transition-shadow duration-300 ${
-        scrolled ? 'shadow-md backdrop-blur' : ''
+        scrolled ? "shadow-md backdrop-blur" : ""
       }`}
     >
       <nav
@@ -23,7 +27,11 @@ export default function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
       >
         <a href="#top" aria-label="Tulas International School, back to top">
-          <img src={logo} alt="Tulas International School" className="h-11 w-auto sm:h-12" />
+          <img
+            src={logo}
+            alt="Tulas International School"
+            className="h-11 w-auto sm:h-12"
+          />
         </a>
 
         <ul className="hidden items-center gap-8 lg:flex">
@@ -40,6 +48,7 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle theme={theme} onToggle={toggleTheme} />
           <Button href={contact.applyUrl} external>
             Apply Now
           </Button>
@@ -48,15 +57,19 @@ export default function Navbar() {
             onClick={() => setOpen((prev) => !prev)}
             aria-expanded={open}
             aria-controls="mobile-nav"
-            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-label={open ? "Close menu" : "Open menu"}
             className="inline-flex size-11 items-center justify-center rounded-full text-ink hover:bg-surface-alt lg:hidden"
           >
-            {open ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+            {open ? (
+              <X size={24} aria-hidden="true" />
+            ) : (
+              <Menu size={24} aria-hidden="true" />
+            )}
           </button>
         </div>
       </nav>
 
       <MobileNav id="mobile-nav" open={open} onClose={closeMenu} />
     </header>
-  )
+  );
 }
