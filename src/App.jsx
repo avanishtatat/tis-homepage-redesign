@@ -11,6 +11,7 @@ import Sports from "./components/sections/Sports";
 import Activities from "./components/sections/Activities";
 import Testimonials from "./components/sections/Testimonials";
 import Enquiry from "./components/sections/Enquiry";
+import Personalities from "./components/sections/Personalities";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <About />
         <Sports />
         <Activities />
+        <Personalities />
         <Testimonials />
         <Enquiry />
       </main>
