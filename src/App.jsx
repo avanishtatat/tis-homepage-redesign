@@ -6,6 +6,8 @@ import Hero from "./components/sections/Hero";
 import Rankings from "./components/sections/Rankings";
 import Stats from "./components/sections/Stats";
 import ScrollProgress from "./components/animation/ScrollProgress";
+import About from "./components/sections/About";
+import Sports from "./components/sections/Sports";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Hero />
         <Rankings />
         <Stats />
+        <About />
+        <Sports />
       </main>
       <Footer />
     </MotionConfig>
