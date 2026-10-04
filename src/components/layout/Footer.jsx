@@ -14,6 +14,8 @@ export default function Footer() {
       <img
         src={campusTopView}
         alt=""
+        width={1920}
+        height={1080}
         loading="lazy"
         decoding="async"
         className="absolute inset-0 -z-20 h-full w-full object-cover"
@@ -30,6 +32,8 @@ export default function Footer() {
             <img
               src={footerLogo}
               alt="Tulas International School"
+              width={203}
+              height={79}
               className="h-16 w-auto"
             />
             <address className="mt-6 space-y-3 text-base not-italic">

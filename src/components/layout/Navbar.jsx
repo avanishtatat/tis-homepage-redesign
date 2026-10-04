@@ -30,6 +30,8 @@ export default function Navbar() {
           <img
             src={logo}
             alt="Tulas International School"
+            width={1080}
+            height={1080}
             className="h-11 w-auto sm:h-12"
           />
         </a>

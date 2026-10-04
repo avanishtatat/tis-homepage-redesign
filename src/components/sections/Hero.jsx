@@ -2,7 +2,6 @@ import { hero } from "../../data/hero";
 import { contact } from "../../data/contact";
 import Button from "../ui/Button";
 import Reveal from "../animation/Reveal";
-import campusHero from "../../assets/campus-hero.webp";
 
 export default function Hero() {
   return (
@@ -86,23 +85,21 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.2} y={40}>
-          <div className="relative isolate">
-            <div
-              aria-hidden="true"
-              className="absolute -bottom-3 -right-3 -z-10 h-full w-full rounded-3xl border-2 border-accent"
-            />
-            <img
-              src={campusHero}
-              alt={hero.imageAlt}
-              width="1000"
-              height="563"
-              fetchPriority="high"
-              decoding="async"
-              className="aspect-[4/3] w-full rounded-3xl object-cover shadow-2xl"
-            />
-          </div>
-        </Reveal>
+        <div className="hero-rise relative isolate">
+          <div
+            aria-hidden="true"
+            className="absolute -bottom-3 -right-3 -z-10 h-full w-full rounded-3xl border-2 border-accent"
+          />
+          <img
+            src="/campus-hero.webp"
+            alt={hero.imageAlt}
+            width="1000"
+            height="563"
+            fetchPriority="high"
+            decoding="async"
+            className="aspect-[4/3] w-full rounded-3xl object-cover shadow-2xl"
+          />
+        </div>
       </div>
     </section>
   );
