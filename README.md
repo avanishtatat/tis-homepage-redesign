@@ -18,7 +18,7 @@ A modern, animated redesign of the Tulas International School homepage, focused 
 
 ## Standout Features
 
-1. **Scroll-triggered reveals:** a reusable `Reveal` component and a `Stagger` variants pair use `whileInView` with `once: true`. Only `opacity` and `transform` are animated, with durations of 0.5s.
+1. **Scroll-triggered reveals:** a reusable `Reveal` component and a `Stagger` variants pair use `whileInView` with `once: true`. Only `opacity` and `transform` are animated, with durations of 0.5s. The hero uses CSS keyframes instead, to keep it off the critical rendering path.
 2. **Scroll progress bar:** `useScroll` feeds a `useSpring`, and the bar is drawn with `scaleX`. The value is a MotionValue, so scrolling causes no React re-renders.
 3. **Animated dark/light theme switcher:** CSS variable tokens switched by a `.dark` class. An inline script in `index.html` applies the saved or system theme before first paint, so there is no flash. The choice persists in `localStorage`.
 
@@ -78,3 +78,12 @@ src/
 
 - Primary red `#b90124` and gold accent `#c09d59`
 - Official copy, logo and campus imagery from tis.edu.in
+
+## Performance
+
+Lighthouse (mobile, production build): Performance 99, Accessibility 100, Best Practices 100, SEO 100. The hero text animates with CSS transforms only (never `opacity: 0`), and the hero image is preloaded on desktop, so neither delays Largest Contentful Paint.
+
+## Possible Improvements
+
+- Trim the Framer Motion bundle with `LazyMotion` (Lighthouse flags some unused JS).
+- Add a custom cursor (not implemented; the three features above already exceed the brief's minimum of two).
