@@ -16,7 +16,7 @@ export default function Hero() {
             </p>
           </div>
 
-          <div classname="hero-rise" style={{ animationDelay: "0.1s" }}>
+          <div className="hero-rise" style={{ animationDelay: "0.1s" }}>
             <h1
               id="hero-heading"
               className="mt-4 font-display text-5xl font-extrabold uppercase leading-[0.95] sm:text-6xl lg:text-7xl"
