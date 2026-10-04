@@ -8,6 +8,9 @@ import Stats from "./components/sections/Stats";
 import ScrollProgress from "./components/animation/ScrollProgress";
 import About from "./components/sections/About";
 import Sports from "./components/sections/Sports";
+import Activities from "./components/sections/Activities";
+import Testimonials from "./components/sections/Testimonials";
+import Enquiry from "./components/sections/Enquiry";
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
         <Stats />
         <About />
         <Sports />
+        <Activities />
+        <Testimonials />
+        <Enquiry />
       </main>
       <Footer />
     </MotionConfig>
