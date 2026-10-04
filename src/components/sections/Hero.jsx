@@ -1,7 +1,6 @@
 import { hero } from "../../data/hero";
 import { contact } from "../../data/contact";
 import Button from "../ui/Button";
-import Reveal from "../animation/Reveal";
 
 export default function Hero() {
   return (
@@ -11,13 +10,13 @@ export default function Hero() {
     >
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-24">
         <div>
-          <Reveal>
+          <div className="hero-rise">
             <p className="font-display text-sm font-bold uppercase tracking-widest sm:text-base">
               {hero.eyebrow}
             </p>
-          </Reveal>
+          </div>
 
-          <Reveal delay={0.1}>
+          <div classname="hero-rise" style={{ animationDelay: "0.1s" }}>
             <h1
               id="hero-heading"
               className="mt-4 font-display text-5xl font-extrabold uppercase leading-[0.95] sm:text-6xl lg:text-7xl"
@@ -42,15 +41,15 @@ export default function Hero() {
                 </svg>
               </span>
             </h1>
-          </Reveal>
+          </div>
 
-          <Reveal delay={0.2}>
+          <div className="hero-rise" style={{ animationDelay: '0.2s' }}>
             <p className="mt-8 max-w-xl text-lg font-light sm:text-xl">
               {hero.description}
             </p>
-          </Reveal>
+          </div>
 
-          <Reveal delay={0.3}>
+          <div className="hero-rise" style={{ animationDelay: '0.3s' }}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button
                 href={contact.applyUrl}
@@ -69,9 +68,9 @@ export default function Hero() {
                 Take a Virtual Tour
               </Button>
             </div>
-          </Reveal>
+          </div>
 
-          <Reveal delay={0.4}>
+          <div className="hero-rise" style={{ animationDelay: '0.4s' }}>
             <ul className="mt-8 flex flex-wrap gap-2">
               {hero.highlights.map((item) => (
                 <li
@@ -82,7 +81,7 @@ export default function Hero() {
                 </li>
               ))}
             </ul>
-          </Reveal>
+          </div>
         </div>
 
         <div className="hero-rise relative isolate">
